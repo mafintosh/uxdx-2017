@@ -55,10 +55,11 @@
   <div data-bodyclass="face">
     <img src="fish-many-friends-tank.png" style="margin-top: 50px">
     <script>
-      var itv = setInterval(function () {
+      setInterval(function () {
         if (document.body.className.indexOf('face') > -1) {
-          clearInterval(itv)
-          document.body.className += ' face-up'
+          if (document.body.className.indexOf('face-up') === -1) {
+            document.body.className += ' face-up'
+          }
         }
       }, 500)
     </script>
