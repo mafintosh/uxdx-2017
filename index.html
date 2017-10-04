@@ -11,6 +11,17 @@
     .ocean {
       background-color: #aec1e7;
     }
+    .face {
+      background-color: #aec1e7;
+      background-repeat: no-repeat;
+      background-image: url(face.png);
+      background-position: center;
+      background-position-y: -50%;
+    }
+    .face-up {
+      transition: background-position-y 8s ease;
+      background-position-y: center;
+    }
   </style>
   <script src='big.js'></script>
   <script src='highlight.js'></script>
@@ -39,7 +50,18 @@
     <img src="fish-many-friends-computers.png" >
   </div>
   <div data-bodyclass="ocean">
-    <img src="fish-many-friends-tank.png" >
+    <img src="fish-many-friends-tank.png" style="margin-top: 50px">
+  </div>
+  <div data-bodyclass="face">
+    <img src="fish-many-friends-tank.png" style="margin-top: 50px">
+    <script>
+      var itv = setInterval(function () {
+        if (document.body.className.indexOf('face') > -1) {
+          clearInterval(itv)
+          document.body.className += ' face-up'
+        }
+      }, 500)
+    </script>
   </div>
 </body>
 </html>
